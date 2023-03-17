@@ -1,14 +1,16 @@
-import { useState } from 'react';
 import { RouterProvider } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import appRouter from './app/router';
 import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const queryClient = new QueryClient();
 
   return (
     <div className="App">
-      <RouterProvider router={appRouter} />
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={appRouter} />
+      </QueryClientProvider>
     </div>
   );
 }
