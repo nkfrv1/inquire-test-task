@@ -1,4 +1,5 @@
 import { useQuery } from 'react-query';
+import { Link } from 'react-router-dom';
 import PostService from '../api/PostService';
 import IPost from '../models/IPost';
 import Post from './Post';
@@ -9,7 +10,9 @@ function PostList() {
   return (
     <div className="PostList">
       {query.data?.map((post: IPost) => (
-        <Post key={post.id} post={post} />
+        <Link key={post.id} to={`/posts/${post.id}`}>
+          <Post key={post.id} post={post} />
+        </Link>
       ))}
     </div>
   );
