@@ -1,6 +1,6 @@
 import { RouterProvider } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import appRouter from './app/router';
+import appRouter from './app/Router';
 import './App.css';
 
 function App() {

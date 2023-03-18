@@ -1,5 +1,12 @@
+import PostList from '../components/PostList';
+
 function PostsPage() {
-  return <h1>Posts...</h1>;
+  return (
+    <>
+      <h2>All Posts</h2>
+      <PostList />
+    </>
+  );
 }
 
 export default PostsPage;
