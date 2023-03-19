@@ -36,39 +36,6 @@ a {
   color: inherit;
 }
 
-.Post {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  row-gap: 1.5rem;
-  padding: 1.75rem 2rem;
-  border: 1px solid #333335;
-  border-radius: 12px;
-  background-color: #2121234D;
-  position: relative;
-}
-
-.PostList {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  row-gap: 1.2rem;
-}
-
-.PostList div {
-  overflow: hidden;
-}
-
-.PostList > a {
-  border: 1px solid #333335;
-  border-radius: 12px;
-  transition: border-color 0.2s;
-}
-
-.PostList > a:hover {
-  border-color: transparent;
-}
-
 .PostsHeader {
   display: flex;
   justify-content: space-between;
@@ -82,12 +49,47 @@ a {
   margin-right: 1.5rem;
 }
 
+.PostList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 1.2rem;
+}
+
+.PostList > a {
+  border: 1px solid #333335;
+  border-radius: 12px;
+  transition: border-color 0.2s;
+}
+
+.PostList > a:hover {
+  border-color: transparent;
+}
+
 .PostWrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
   row-gap: 1.8rem;
+}
+
+.PostControls {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+
+.Post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 1.5rem;
+  padding: 1.75rem 2rem;
+  border: 1px solid #333335;
+  border-radius: 12px;
+  background-color: #2121234D;
+  position: relative;
 }
 
 .CommentList {

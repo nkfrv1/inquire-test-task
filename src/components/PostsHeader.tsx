@@ -1,4 +1,4 @@
-import { Button, message } from 'antd';
+import { Button, ConfigProvider, message, theme } from 'antd';
 import { useState } from 'react';
 import { useMutation } from 'react-query';
 import PostService from '../api/PostService';
@@ -32,7 +32,13 @@ function PostsHeader() {
 
   return (
     <>
-      {contextHolder}
+      <ConfigProvider
+        theme={{
+          algorithm: theme.darkAlgorithm,
+        }}
+      >
+        {contextHolder}
+      </ConfigProvider>
       <div className="PostsHeader">
         <h2>All posts</h2>
         <Button
