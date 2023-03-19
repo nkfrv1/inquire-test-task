@@ -2,9 +2,9 @@ import $api from '.';
 import IComment from '../models/IComment';
 
 export default class CommentService {
-  static async create(): Promise<IComment> {
+  static async create(comment: IComment): Promise<IComment> {
     try {
-      const { data } = await $api.post('/comments');
+      const { data } = await $api.post('/comments', comment);
       return data;
     } catch (e) {
       console.error(e);
@@ -22,9 +22,9 @@ export default class CommentService {
     return data;
   }
 
-  static async update(id: number): Promise<IComment> {
+  static async update(id: number, comment: IComment): Promise<IComment> {
     try {
-      const { data } = await $api.put(`/comments/${id}`);
+      const { data } = await $api.put(`/comments/${id}`, comment);
       return data;
     } catch (e) {
       console.error(e);
