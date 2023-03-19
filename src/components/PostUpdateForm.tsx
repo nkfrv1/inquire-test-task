@@ -46,7 +46,7 @@ function PostUpdateForm({ post, open, onUpdate, onCancel }: PostUpdateFormProps)
           rules={[
             {
               required: true,
-              message: 'Please fill the field with the content of your new post',
+              message: 'Please fill the field with the new content of your post',
             },
           ]}
         >

@@ -52,7 +52,13 @@ function PostCreateForm({ open, onCreate, onCancel }: PostCreateFormProps) {
               },
             ]}
           >
-            <Input.TextArea maxLength={500} showCount={true} allowClear={true} />
+            <Input.TextArea
+              size="large"
+              autoSize={true}
+              showCount={true}
+              allowClear={true}
+              maxLength={500}
+            />
           </Form.Item>
         </Form>
       </Modal>

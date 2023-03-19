@@ -1,12 +1,12 @@
 import FloatButton from 'antd/es/float-button';
-import PostList from '../components/PostList';
+import PostsList from '../components/PostsList';
 import PostsHeader from '../components/PostsHeader';
 
 function PostsPage() {
   return (
     <>
       <PostsHeader />
-      <PostList />
+      <PostsList />
       <FloatButton.BackTop visibilityHeight={700} />
     </>
   );

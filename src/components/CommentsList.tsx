@@ -2,9 +2,9 @@ import { List } from 'antd';
 import IComment from '../models/IComment';
 import Comment from './Comment';
 
-function CommentList({ comments }: { comments: IComment[] }) {
+function CommentsList({ comments }: { comments: IComment[] }) {
   return (
-    <div className="CommentList">
+    <div className="CommentsList">
       <List
         itemLayout="horizontal"
         dataSource={comments}
@@ -14,4 +14,4 @@ function CommentList({ comments }: { comments: IComment[] }) {
   );
 }
 
-export default CommentList;
+export default CommentsList;

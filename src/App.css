@@ -49,20 +49,20 @@ a {
   margin-right: 1.5rem;
 }
 
-.PostList {
+.PostsList {
   display: flex;
   flex-direction: column;
   justify-content: center;
   row-gap: 1.2rem;
 }
 
-.PostList > a {
+.PostsList > a {
   border: 1px solid #333335;
   border-radius: 12px;
   transition: border-color 0.2s;
 }
 
-.PostList > a:hover {
+.PostsList > a:hover {
   border-color: transparent;
 }
 
@@ -92,7 +92,7 @@ a {
   position: relative;
 }
 
-.CommentList {
+.CommentsList {
   padding: 2rem 2rem;
   border: 1px solid #333335;
   border-radius: 8px;
