@@ -2,7 +2,7 @@ import { ConfigProvider, Divider, theme } from 'antd';
 import { useQuery } from 'react-query';
 import PostService from '../api/PostService';
 import IPost from '../models/IPost';
-import CommentsList from './CommentsList';
+import CommentsSection from './CommentsSection';
 import PostControls from './PostControls';
 
 function Post({ post }: { post: IPost }) {
@@ -35,9 +35,7 @@ function Post({ post }: { post: IPost }) {
           <p>{query.data?.body}</p>
         </div>
         <Divider style={{ margin: '0' }} />
-        {query.data?.comments && Object.keys(query.data?.comments).length !== 0 && (
-          <CommentsList comments={query.data?.comments} />
-        )}
+        <CommentsSection comments={query.data?.comments} postId={query.data!.id} />
       </div>
     </ConfigProvider>
   );

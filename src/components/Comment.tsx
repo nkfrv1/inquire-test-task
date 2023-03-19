@@ -1,5 +1,5 @@
 import { UserOutlined } from '@ant-design/icons';
-import { Avatar, List } from 'antd';
+import { Avatar, List, Typography } from 'antd';
 import { BaseSyntheticEvent } from 'react';
 import IComment from '../models/IComment';
 
@@ -18,17 +18,19 @@ function Comment({ comment }: { comment: IComment }) {
         <List.Item.Meta
           avatar={<Avatar size="large" icon={<UserOutlined />} />}
           title={
-            // eslint-disable-next-line jsx-a11y/anchor-is-valid, jsx-a11y/mouse-events-have-key-events
-            <a
-              href="#"
-              style={{ color: '#fff' }}
-              onMouseOver={onMouseOver}
-              onMouseLeave={onMouseLeave}
-              onMouseDown={onMouseDown}
-              onMouseUp={onMouseUp}
-            >
-              {comment.name}
-            </a>
+            <span>
+              <a
+                href={undefined}
+                style={{ color: '#fff' }}
+                onMouseOver={onMouseOver}
+                onMouseLeave={onMouseLeave}
+                onMouseDown={onMouseDown}
+                onMouseUp={onMouseUp}
+              >
+                {comment.name}
+              </a>
+              <Typography.Text type="secondary"> {`<${comment.email}>`}</Typography.Text>
+            </span>
           }
           description={<p style={{ fontSize: '15px', color: '#b1b1b2' }}>{comment.body}</p>}
           style={{ alignItems: 'center' }}

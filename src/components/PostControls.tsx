@@ -23,7 +23,10 @@ function PostControls({ post }: { post: IPost }) {
     mutationFn: (newPost: IPost) => PostService.update(post.id, newPost),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ['post'] }),
   });
-  const deletePost = useMutation(() => PostService.delete(post.id));
+  const deletePost = useMutation({
+    mutationFn: () => PostService.delete(post.id),
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['posts'] }),
+  });
 
   const onUpdate = (formData: IPost) => {
     updatePost.mutate(formData);

@@ -98,3 +98,9 @@ a {
   border-radius: 8px;
   background-color: #2121234D;
 }
+
+.PostWrapper > form {
+  align-self: center;
+  min-width: 34rem;
+  max-width: 80%;
+}
