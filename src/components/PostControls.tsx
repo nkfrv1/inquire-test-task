@@ -6,7 +6,7 @@ import {
 } from '@ant-design/icons';
 import { Button, Popconfirm } from 'antd';
 import { useState } from 'react';
-import { useMutation } from 'react-query';
+import { useMutation, useQueryClient } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 import PostService from '../api/PostService';
 import IPost from '../models/IPost';
@@ -17,7 +17,12 @@ function PostControls({ post }: { post: IPost }) {
 
   const navigate = useNavigate();
 
-  const updatePost = useMutation((newPost: IPost) => PostService.update(post.id, newPost));
+  const queryClient = useQueryClient();
+
+  const updatePost = useMutation({
+    mutationFn: (newPost: IPost) => PostService.update(post.id, newPost),
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['post'] }),
+  });
   const deletePost = useMutation(() => PostService.delete(post.id));
 
   const onUpdate = (formData: IPost) => {

@@ -1,6 +1,6 @@
 import { Button, ConfigProvider, message, theme } from 'antd';
 import { useState } from 'react';
-import { useMutation } from 'react-query';
+import { useMutation, useQueryClient } from 'react-query';
 import PostService from '../api/PostService';
 import IPost from '../models/IPost';
 import PostCreateForm from './PostCreateForm';
@@ -9,7 +9,12 @@ function PostsHeader() {
   const [open, setOpen] = useState(false);
   const [messageApi, contextHolder] = message.useMessage();
 
-  const mutation = useMutation((newPost: IPost) => PostService.create(newPost));
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation({
+    mutationFn: (newPost: IPost) => PostService.create(newPost),
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['posts'] }),
+  });
 
   const onCreate = (formData: IPost) => {
     mutation.mutate(formData, { onSuccess: () => success(), onError: () => error() });
